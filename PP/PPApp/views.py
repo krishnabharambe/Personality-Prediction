@@ -58,7 +58,7 @@ def predict(request):
     label = label.tolist() + label1.tolist()
 
     label = label
-    print("Classes :",list(set(label)))
+    list(set(label))
 
     length_label = len(label)
     len(label)
@@ -127,7 +127,7 @@ def predict(request):
 
     dependable_list.append(['Female', 18, 7, 6, 4, 5, 5])
 
-    print("Data points in each class: ",len(responsible_list),len(serious_list),len(extraverted_list),
+    print(len(responsible_list),len(serious_list),len(extraverted_list),
       len(lively_list),len(dependable_list))
 
     def random_selection(source_num,label,list_label,target_num):
@@ -171,7 +171,7 @@ def predict(request):
             temp.append(converter(data_list[i]))
         return temp
         
-    print("Example for Converter function ",converter(['Male', 20, 1, 2, 7, 6, 4]))
+    converter(['Male', 20, 1, 2, 7, 6, 4])
 
     responsible_list_main = converter_data(responsible_list_main)
 
@@ -238,7 +238,7 @@ def predict(request):
         personality[i]=label_set[i]
 
     predict_label = model.predict(test)
-    print("Accuracy of Model : ",model.score(test,label_test)*100)
+    model.score(test,label_test)*100
     data_point=[request.POST['Gender'], request.POST['Age'], request.POST['Openness'], request.POST['Neuroticism'], request.POST['Conscientiousness'], request.POST['Agreeableness'], request.POST['Extraversion']]
 
     def predict_datapoint(model,datapoint):
